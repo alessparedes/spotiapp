@@ -1,5 +1,14 @@
-<ul>
-    <li *ngFor="let pais of paises">
-        {{ pais.name.common }} - {{ pais.population | number }}
-    </li>
-</ul>
+<div class="row row-cols-1 row-cols-md-3 g-4 d-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+
+    <div *ngFor="let song of newSongs" class="card" style="width: 18rem;">
+        <img class="card-img-top" [src]="song.images[0].url"  alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ song.name }}</h5>
+          <p class="card-text">
+            <span *ngFor="let artist of song.artists" class="badge text-bg-primary">{{ artist.name }}</span>
+          </p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+    </div>
+
+</div>
