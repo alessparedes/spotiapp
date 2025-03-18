@@ -1,0 +1,7 @@
+.card-text .badge {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    word-wrap: break-word;
+  }
