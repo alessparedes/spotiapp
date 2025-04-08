@@ -14,8 +14,11 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 //PIPES
 import { NoimagePipe } from './pipe/noimage.pipe';
+import { DomseguroPipe } from './pipe/domseguro.pipe';
+
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistComponent,
     NavbarComponent,
     NoimagePipe,
+    DomseguroPipe,
     CardsComponent,
     LoadingComponent
   ],
