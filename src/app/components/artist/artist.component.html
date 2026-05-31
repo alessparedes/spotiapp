@@ -6,7 +6,7 @@
     <div class="col">
         <h3>{{ artist.name }}</h3>
         <p>
-            <a [href]="artist.external_urls.spotify" target="_blank">
+            <a [href]="artist?.external_urls?.spotify" target="_blank">
                 Ir a la pagina del artista
             </a>
         </p>
@@ -38,9 +38,9 @@
                         <td>
                             <!-- <audio *ngIf="topTrack.preview_url" [src]="topTrack.preview_url" controls></audio>
                             <span *ngIf="!topTrack.preview_url" class="text">Vista previa no Disponible</span> -->
-                            <iframe width="300" height="160" title="Spotify Embed: My Path to Spotify: Women in Engineering" 
-                            style="border-radius: 12px" frameborder="0" 
-                            allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            <iframe width="300" height="160" title="Spotify Embed: My Path to Spotify: Women in Engineering"
+                            style="border-radius: 12px" frameborder="0"
+                            allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             [src]="topTrack.uri | domseguro"></iframe>
                         </td>
                     </tr>

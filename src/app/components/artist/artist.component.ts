@@ -11,10 +11,10 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 export class ArtistComponent {
 
   artist: any = {};
-  topTracks: any = {};
+  topTracks: any[] = [];
   loading: boolean = false;
 
-  constructor(private router: ActivatedRoute, private spotify: SpotifyService) { 
+  constructor(private router: ActivatedRoute, private spotify: SpotifyService) {
     this.router.params.subscribe(params => {
       this.getArtist(params['id']);
       this.getTopTracks(params['id']);
