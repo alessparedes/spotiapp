@@ -22,6 +22,50 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Description
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Spotiapp is an Angular application that consumes the Spotify Web API to display information about artists, new releases, and top tracks.
+
+## Requirements
+
+Before running the project, make sure you have:
+
+- Node.js installed.
+- npm installed.
+- Angular CLI installed.
+- A Spotify Developer account.
+- A valid Spotify Web API access token.
+
+## Spotify Developer Setup
+
+This application uses the Spotify Web API, so you need a Spotify Developer account to obtain an `access_token`.
+
+1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
+2. Log in with your Spotify account.
+3. Create a new app.
+4. Use the Spotify Web API authentication flow to generate an access token.
+5. Use the token as a Bearer token in requests to Spotify.
+
+The authorization header must follow this format:
+
+Example:
+- text Authorization: Bearer BQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+## Important note about access tokens
+
+Spotify access tokens expire after a short period of time. If the app starts returning errors such as `400 Bad Request`, `401 Unauthorized`, or authorization-related errors, the token may have expired and you will need to generate a new one.
+
+## Security recommendation
+
+Do not commit real Spotify tokens, client secrets, or private credentials directly into the source code.
+
+For learning or local testing, you may temporarily use a token in the Angular environment files, but remember that Angular runs in the browser, so any value included in the frontend bundle can be inspected by users.
+
+For a more secure implementation, use a backend server to handle Spotify authentication and keep sensitive credentials such as `client_secret` outside the Angular application.
+
+The backend should be responsible for:
+
+- Requesting access tokens from Spotify.
+- Storing private credentials securely.
+- Refreshing or regenerating tokens when needed.
+- Sending only the required Spotify data back to the Angular app.
